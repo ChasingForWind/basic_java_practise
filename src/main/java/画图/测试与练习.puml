@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+zhiyang -> Bob: Authentication Request
+Bob --> zhiyang: Authentication Response
+
+zhiyang -> Bob: Another authentication Request
+zhiyang <-- Bob: another authentication Response
+
+@enduml
