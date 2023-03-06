@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.WeekFields;
 
 public class 精准修改时间 {
     public static void main(String[] args) {
@@ -24,6 +25,7 @@ public class 精准修改时间 {
         System.out.println("下一年的第一天："+now.with(TemporalAdjusters.firstDayOfNextYear()));
 
         // with方法和temperAdjusters方法使用
+        System.out.println("本周一：" + now.with(DayOfWeek.MONDAY));
         System.out.println("下个周一："+ now.with(TemporalAdjusters.next(DayOfWeek.MONDAY)));
         System.out.println("上个周三："+ now.with(TemporalAdjusters.previous(DayOfWeek.WEDNESDAY)));
         System.out.println("上周三："+ now.with(TemporalAdjusters.previous(DayOfWeek.WEDNESDAY)).plus(-1, ChronoUnit.WEEKS));
