@@ -1,4 +1,4 @@
-package CompletableFuture的使用;/**
+package 多线程.CompletableFuture的使用;/**
  * @Author liuchang
  * @Date 2023/1/16 10:45 AM
  * @Version 1.0

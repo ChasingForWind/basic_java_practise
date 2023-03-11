@@ -1,4 +1,4 @@
-package CompletableFuture的使用.创建异步线程;/**
+package 多线程.CompletableFuture的使用.创建异步线程;/**
  * @Author liuchang
  * @Date 2023/1/16 11:07 AM
  * @Version 1.0

@@ -1,6 +1,6 @@
-package CompletableFuture的使用.线程编排;/**
+package 多线程.CompletableFuture的使用.线程编排;/**
  * @Author liuchang
- * @Date 2023/1/18 5:44 PM
+ * @Date 2023/1/18 5:16 PM
  * @Version 1.0
  */
 
@@ -10,31 +10,27 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author: zhiyang
- * @description: thenCombine
- * @create: 2023-01-18 17:44
+ * @description:
+ * @create: 2023-01-18 17:16
  **/
 
 
-public class ThenCombine {
+public class ThenRun {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        CompletableFuture<Integer> res1 = CompletableFuture.supplyAsync(() -> {
+        CompletableFuture.runAsync(()->{
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            return 100;
-        });
-
-        CompletableFuture<Integer> res2 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("stage1 finish...");
+        }).thenRun(()->{
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            return 20;
-        });
-
-        System.out.println(res1.thenCombine(res2, (n1, n2) -> n1 / n2).get());
+            System.out.println("stage2 finish...");
+        }).get();
     }
 }

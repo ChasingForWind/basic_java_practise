@@ -1,4 +1,4 @@
-package CompletableFuture的使用.线程编排;/**
+package 多线程.CompletableFuture的使用.线程编排;/**
  * @Author liuchang
  * @Date 2023/1/18 5:28 PM
  * @Version 1.0
