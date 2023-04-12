@@ -4,8 +4,8 @@ import java.nio.ByteBuffer;
 
 public class ByteBufferCompare {
     public static void main(String[] args) {
-//allocateCompare(); //分配比较
-        operateCompare(); //读写比较
+        allocateCompare(); //分配比较
+       // operateCompare(); //读写比较
     }
 
     public static void allocateCompare() {

@@ -1,4 +1,4 @@
-package 多线程.常规;
+package 多线程.原有特性;
 
 public class ThreadLocal的使用 {
 
