@@ -1,0 +1,14 @@
+@startuml
+
+participant "Java程序" as Program
+database "数据库" as DB
+
+Program -> DB: 建立连接
+Program -> DB: 分页查询
+DB -> Program: 返回分页查询结果
+Program->Program:整理分页id
+Program->DB:根据分页id查询准确率数据
+Program -> DB: 关闭连接
+Program->Program:处理准确率数据
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+participant "schedulex程序" as Program
+database "数据库" as DB
+
+
+Program -> DB: 建立连接
+Program -> DB: 查询总记录数
+DB -> Program: 返回总记录数
+Program -> Program: 计算分页信息
+loop 查询每一页
+    Program -> DB: 执行SQL语句
+    DB -> Program: 返回查询结果
+    Program -> Program: 多线程计算准确率并打标
+    Program -> DB : 执行SQL语句，回写数据库
+end
+Program -> DB: 关闭连接
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+start
+:调用定时任务;
+:建立数据库连接;
+:执行 SQL 语句,获取总记录数;
+group 循环
+:计算分页信息，执行 SQL 语句，循环获取品池数据;
+:多线程计算准确率并打标;
+:执行update SQL语句，更新mysql品池;
+end group
+:通过DTS自动更新ADB品池;
+:返回查询结果;
+stop
+@enduml
