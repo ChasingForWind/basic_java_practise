@@ -1,24 +1,22 @@
-package CompletableFuture的使用.异常处理;/**
+package 多线程.CompletableFuture的使用.异常处理;/**
  * @Author liuchang
- * @Date 2023/1/19 10:27 AM
+ * @Date 2023/1/19 10:23 AM
  * @Version 1.0
  */
 
-import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 /**
  * @author: zhiyang
- * @description: Handle
- * @create: 2023-01-19 10:27
+ * @description: Exceptionally
+ * @create: 2023-01-19 10:23
  **/
 
 
-public class Handle {
+public class Exceptionally {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        Random random = new Random();
-        int age = random.nextInt(150);
+        Integer age = -1;
 
         CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
             if (age < 0) {
@@ -30,13 +28,10 @@ public class Handle {
             } else {
                 return "Child";
             }
-        }).handle((res,ex) -> {
-            if (ex != null){
-                return "some bad thing happened";
-            }
-            return res;
+        }).exceptionally(ex -> {
+            System.out.println("some bad thing happened");
+            return "false";
         });
-
         System.out.println(future.get());
     }
 }
